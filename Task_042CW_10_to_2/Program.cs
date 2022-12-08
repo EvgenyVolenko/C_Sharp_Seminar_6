@@ -22,7 +22,6 @@ Console.WriteLine($"Введенное число в двоичной форме
 string TenToTwo (int n)
 {
     string dvoich = string.Empty;
-    string temp = string.Empty;
     while (n > 0)
     {
         dvoich = dvoich + Convert.ToString(n % 2);

@@ -13,12 +13,12 @@ int k2 = vvod("k2");
 (double xP, double yP) = KoordPeresech(b1, k1, b2, k2);
 Console.WriteLine($"Координаты точки пересечения X = {xP}, Y = {yP}");
 
-(double, double) KoordPeresech(int b11, int k11, int b21, int k21)
+(double, double) KoordPeresech(double b11, double k11, double b21, double k21)
 {
     double xP1 = 0, yP1 = 0;
-    xP1 = (b21 - b11) / (k11 - k21);
-    yP1 = k11 * xP1 + b11;
-    return (xP1, yP1);
+    xP1 = (b21 - b11) / (k11 - k21); // Пришлось принять в метод переменные как double? т.к. некорректно считалась эта формула
+    yP1 = k11 * xP1 + b11;           // некорректно считались эти формулы.
+    return (xP1, yP1);               // Как лучше? Сразу объявить переменную double или переопределить потом?
 }
 
 int vvod(string ratio)

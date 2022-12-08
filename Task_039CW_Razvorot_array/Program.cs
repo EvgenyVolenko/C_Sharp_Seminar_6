@@ -18,10 +18,8 @@ while (true)
 
 int[] array = FillArray(digit, LEFTRANGE, RIGHTRANGE);
 Console.WriteLine($"Массив после заполнения [{string.Join(", ", array)}]");
-
-
-Console.WriteLine($"Развернутый массив [{string.Join(", ", RoundArray(array))}]");
-
+RoundArray(array);
+Console.WriteLine($"Развернутый массив [{string.Join(", ", array)}]");
 
 int[] FillArray(int size, int leftRange, int rightRange)
 {
@@ -35,12 +33,13 @@ int[] FillArray(int size, int leftRange, int rightRange)
     return arr;
 }
 
-int[] RoundArray(int[] ishodn)
+void RoundArray(int[] ishodn)
 {
-    int[] arrayR = new int[ishodn.Length];
-    for (int i = 0; i < ishodn.Length; i++)
+    int temp = 0;
+    for (int i = 0; i < ishodn.Length / 2; i++)
     {
-        arrayR[ishodn.Length -1 - i] = ishodn[i];
+        temp = ishodn[i];
+        ishodn[i] = ishodn[ishodn.Length -1 - i] ;
+        ishodn[ishodn.Length -1 - i] = temp;
     }
-    return arrayR;
 }

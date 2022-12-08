@@ -17,4 +17,4 @@ while (str != "stop")
     else Console.WriteLine("Ну просил же ЧИСЛО! ");
 }
 
-Console.WriteLine($"Пользователь ввел число больше 0 {count} раз");
+Console.WriteLine($"Пользователь ввел число больше '0' {count} раз/раза");

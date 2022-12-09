@@ -10,8 +10,12 @@ int k1 = vvod("k1");
 int b2 = vvod("b2");
 int k2 = vvod("k2"); 
 
-(double xP, double yP) = KoordPeresech(b1, k1, b2, k2);
-Console.WriteLine($"Координаты точки пересечения X = {xP}, Y = {yP}");
+if (k1 == k2) Console.WriteLine("Ваши прямые или совпадают или параллельны");
+else 
+{
+    (double xP, double yP) = KoordPeresech(b1, k1, b2, k2);
+    Console.WriteLine($"Координаты точки пересечения X = {xP}, Y = {yP}");
+}
 
 (double, double) KoordPeresech(double b11, double k11, double b21, double k21)
 {

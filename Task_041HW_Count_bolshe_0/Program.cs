@@ -13,7 +13,10 @@ while (str != "stop")
     Console.Write("Введите число или 'stop' для останова: ");
     str = Console.ReadLine();
     if (str == "stop") break;
-    else if (int.TryParse(str, out digit)) count++;
+    else if (int.TryParse(str, out digit))
+    {
+        if (digit > 0) count++;
+    }
     else Console.WriteLine("Ну просил же ЧИСЛО! ");
 }
 
